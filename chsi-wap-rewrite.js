@@ -15,6 +15,7 @@ var LIST_RULES = {
   入学日期: "2025年08月31日",
   学籍状态: "在籍（注册学籍）",
   预计毕业日期: "2029年07月01日",
+  离校日期: "2029年07月01日", 
 
 };
 
@@ -56,7 +57,7 @@ function main() {
     html = tryReplace(html, re, "$1" + LIST_RULES[label] + "$2", "列表-" + label);
   });
 
-
+  html = tryReplace(html, /(<div class="left">\s*)离校日期(\s*<\/div>)/, "$1预计毕业日期$2", "标签-离校日期→预计毕业日期");
   var css = "<style>.yxmc,.cc,.des,.gdjy-view-ul li .right{font-family:Chsi,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",sans-serif!important;}</style>";
   html = html.replace(/<\/head>/, css + "</head>");
 
