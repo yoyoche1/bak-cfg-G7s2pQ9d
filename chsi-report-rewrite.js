@@ -11,6 +11,7 @@ const FIELD_RULES = {
   入学日期: "2025年08月31日",
   学籍状态: "在籍（注册学籍）",
   预计毕业日期: "2029年07月01日",
+  离校日期: "2029年07月01日",
   在线验证码: "ABQZT79APECU017Q",
 
 };
@@ -108,7 +109,7 @@ function main() {
       console.log("[CHSI] 未匹配到字段：" + label);
     }
   });
-
+  html = html.replace(/(<div class="col-left">\s*)离校日期(\s*<\/div>)/g, "$1预计毕业日期$2");
 
   TEXT_RULES.forEach(function (pair) {
     if (html.indexOf(pair[0]) !== -1) {
