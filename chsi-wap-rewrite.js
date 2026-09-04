@@ -1,8 +1,8 @@
 
-var SCHOOL = "北京大学";            // <div class="yxmc"> 学校名称
-var LEVEL = "本科";                 // <div class="cc">   层次
-var MAJOR = "智能科学与技术";       // <div class="des">  专业（前半段）
-var STUDY_FORM = "普通全日制";      // <div class="des">  学习形式（后半段）
+var SCHOOL = "北京大学";            
+var LEVEL = "本科";                 
+var MAJOR = "智能科学与技术";      
+var STUDY_FORM = "普通全日制";     
 
 
 var LIST_RULES = {
@@ -58,7 +58,9 @@ function main() {
   });
 
   html = tryReplace(html, /(<div class="left">\s*)离校日期(\s*<\/div>)/, "$1预计毕业日期$2", "标签-离校日期→预计毕业日期");
+  
   var css = "<style>.yxmc,.cc,.des,.gdjy-view-ul li .right{font-family:Chsi,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",sans-serif!important;}</style>";
+  
   html = html.replace(/<\/head>/, css + "</head>");
 
   $done({ body: html });
