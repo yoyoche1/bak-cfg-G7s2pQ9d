@@ -1,15 +1,15 @@
 
-var SCHOOL = "国防大学";            
-var LEVEL = "本科";                 
-var MAJOR = "智能科学与技术";       
-var STUDY_FORM = "普通全日制";      
+var SCHOOL = "";            
+var LEVEL = "";                 
+var MAJOR = "";       
+var STUDY_FORM = "";      
 
 
 var LIST_RULES = {
   学制: "4 年",
-  学历类别: "普通高等教育",
+  学历类别: "",
   分院: "",                 
-  系所: "多智能体",
+  系所: "",
   班级: "20250101",
   学号: "20251405000547",
   入学日期: "2025年08月31日",
