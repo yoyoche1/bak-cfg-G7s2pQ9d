@@ -1,5 +1,5 @@
 
-var SCHOOL = "国防科技大学";           
+var SCHOOL = "新加坡国立大学";           
 var LEVEL = "本科";                 
 var MAJOR = "智能科学与技术";       
 var STUDY_FORM = "普通全日制";      
