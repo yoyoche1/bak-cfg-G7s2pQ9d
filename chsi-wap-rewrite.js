@@ -1,15 +1,15 @@
 
-var SCHOOL = "";            
-var LEVEL = "";                 
-var MAJOR = "";       
-var STUDY_FORM = "";      
+var SCHOOL = ;            
+var LEVEL = ;                 
+var MAJOR = ;       
+var STUDY_FORM = ;      
 
 
 var LIST_RULES = {
   学制: "4 年",
-  学历类别: "",
-  分院: "",                 
-  系所: "",
+  学历类别: ,
+  分院: ,                 
+  系所: ,
   班级: "20250101",
   学号: "20251405000547",
   入学日期: "2025年08月31日",
