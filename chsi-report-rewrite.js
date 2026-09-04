@@ -11,6 +11,7 @@ const FIELD_RULES = {
   入学日期: "2025年08月31日",
   学籍状态: "在籍（注册学籍）",
   预计毕业日期: "2029年07月01日",
+  在线验证码: "ABQZT79APECU017Q",
 
 };
 
@@ -24,7 +25,7 @@ const MASK_ENABLE = false;
 const MASK_FIELDS = ["在线验证码"]; 
 
 
-const PROTECTED_FIELDS = ["在线验证码"];
+const PROTECTED_FIELDS = [];
 
 
 function escapeRegExp(s) {
