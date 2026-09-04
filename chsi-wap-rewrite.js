@@ -1,23 +1,25 @@
 
 var SCHOOL = "北京大学";            
 var LEVEL = "本科";                 
-var MAJOR = "智能科学与技术";      
-var STUDY_FORM = "普通全日制";     
+var MAJOR = "智能科学与技术";       
+var STUDY_FORM = "普通全日制";      
 
 
 var LIST_RULES = {
   学制: "4 年",
   学历类别: "普通高等教育",
   分院: "",                 
-  系所: "多智能体系",
+  系所: "多智能体",
   班级: "20250101",
   学号: "20251405000547",
   入学日期: "2025年08月31日",
   学籍状态: "在籍（注册学籍）",
-  预计毕业日期: "2029年07月01日",
-  离校日期: "2029年07月01日", 
 
 };
+
+
+var BYRQ_VALUE = "2029年07月01日";      // 日期改成这个
+var BYRQ_ITEMNAME = "预计毕业日期";     // 标签统一显示成这个（把「离校日期」改掉）
 
 
 
@@ -44,9 +46,9 @@ function main() {
   }
   var html = resp.body;
 
-
+  
   html = tryReplace(html, /(<div class="yxmc">)[^<]*(<\/div>)/, "$1" + SCHOOL + "$2", "学校名称");
- 
+
   html = tryReplace(html, /(<div class="cc[^"]*">)[^<]*(<\/div>)/, "$1" + LEVEL + "$2", "层次");
 
   html = tryReplace(html, /(<div class="des">)[^<]*(<\/div>)/, "$1" + MAJOR + "　|　" + STUDY_FORM + "$2", "专业/学习形式");
@@ -57,10 +59,13 @@ function main() {
     html = tryReplace(html, re, "$1" + LIST_RULES[label] + "$2", "列表-" + label);
   });
 
-  html = tryReplace(html, /(<div class="left">\s*)离校日期(\s*<\/div>)/, "$1预计毕业日期$2", "标签-离校日期→预计毕业日期");
-  
+
+  html = tryReplace(html, /"byrq":"[^"]*"/, '"byrq":"' + BYRQ_VALUE + '"', "JSON-离校日期值");
+
+  html = tryReplace(html, /"byrqItemName":"离校日期"/, '"byrqItemName":"' + BYRQ_ITEMNAME + '"', "JSON-离校日期标签");
+
+
   var css = "<style>.yxmc,.cc,.des,.gdjy-view-ul li .right{font-family:Chsi,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",sans-serif!important;}</style>";
-  
   html = html.replace(/<\/head>/, css + "</head>");
 
   $done({ body: html });
