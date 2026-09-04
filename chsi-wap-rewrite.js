@@ -1,5 +1,5 @@
 
-var SCHOOL = "北京大学";            
+var SCHOOL = "国防大学";            
 var LEVEL = "本科";                 
 var MAJOR = "智能科学与技术";       
 var STUDY_FORM = "普通全日制";      
@@ -18,8 +18,8 @@ var LIST_RULES = {
 };
 
 
-var BYRQ_VALUE = "2029年07月01日";      // 日期改成这个
-var BYRQ_ITEMNAME = "预计毕业日期";     // 标签统一显示成这个（把「离校日期」改掉）
+var BYRQ_VALUE = "2029年07月01日";      
+var BYRQ_ITEMNAME = "预计毕业日期";     
 
 
 
